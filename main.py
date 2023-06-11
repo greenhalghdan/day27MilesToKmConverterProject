@@ -21,6 +21,8 @@ resultlabel.grid(column=1, row=1)
 # Data Entry
 
 input = Entry(width=10)
+input.insert(END, "0")
+input.focus()
 input.grid(column=1, row=0)
 
 #buttons
