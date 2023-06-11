@@ -1,16 +1,30 @@
-# This is a sample Python script.
+from tkinter import *
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+result = 0
 
+def convert_miles_to_km():
+    resultlabel.config(text=int(input.get())*1.609344)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+window = Tk()
+window.title("Mile to Km Converter")
+window.minsize(width=200, height=100)
+window.config(padx=10, pady=10)
+# labels:
 
+mileslabel = Label(text="Miles")
+kmlabel = Label(text="Is equal to")
+resultlabel = Label(text=result)
+mileslabel.grid(column=2, row=0)
+kmlabel.grid(column=0, row=1)
+resultlabel.grid(column=1, row=1)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# Data Entry
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+input = Entry(width=10)
+input.grid(column=1, row=0)
+
+#buttons
+
+convert = Button(text="Calculate", command=convert_miles_to_km)
+convert.grid(column=1, row=2)
+window.mainloop()
